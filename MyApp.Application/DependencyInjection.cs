@@ -11,6 +11,10 @@ namespace MyApp.Application
         {
             // Register application services here
             // Example: services.AddTransient<IMyService, MyService>();
+
+            services.AddMediatR(cfg => {
+                cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+            });
             return services;
         } 
     }
