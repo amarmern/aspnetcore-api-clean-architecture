@@ -9,7 +9,7 @@ namespace MyApp.Core.Interfaces
     {
         Task<IEnumerable<EmployeeEntity>> GetEmployees();
 
-        Task<EmployeeEntity> GetEmployeeById(Guid id);
+        Task<EmployeeEntity> GetEmployeeByIdAsync(Guid id);
 
         Task<EmployeeEntity> AddEmployeAsync(EmployeeEntity entity);
 

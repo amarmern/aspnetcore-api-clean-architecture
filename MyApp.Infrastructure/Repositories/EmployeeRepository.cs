@@ -11,7 +11,7 @@ namespace MyApp.Infrastructure.Repositories
         {
             return await dbContext.Employees.ToListAsync();
         }
-        public async Task<EmployeeEntity> GetEmployeeById(Guid id)
+        public async Task<EmployeeEntity> GetEmployeeByIdAsync(Guid id)
         {
             return await dbContext.Employees.FirstOrDefaultAsync(e => e.Id == id);
         }
