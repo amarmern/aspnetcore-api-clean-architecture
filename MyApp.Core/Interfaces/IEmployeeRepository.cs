@@ -13,7 +13,7 @@ namespace MyApp.Core.Interfaces
 
         Task<EmployeeEntity> AddEmployeAsync(EmployeeEntity entity);
 
-        Task<EmployeeEntity> UpdatemployeAsync(Guid employeeId, EmployeeEntity entity);
+        Task<EmployeeEntity> UpdateEmployeeAsync(Guid employeeId, EmployeeEntity entity);
 
         Task<bool> DeleteEmployeAsync(Guid employeeId);
     }

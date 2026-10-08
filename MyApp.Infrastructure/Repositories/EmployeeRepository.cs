@@ -23,7 +23,7 @@ namespace MyApp.Infrastructure.Repositories
             return entity;
         }
 
-        public async Task<EmployeeEntity> UpdatemployeAsync(Guid employeeId, EmployeeEntity entity)
+        public async Task<EmployeeEntity> UpdateEmployeeAsync(Guid employeeId, EmployeeEntity entity)
         {
            var employee =  await dbContext.Employees.FirstOrDefaultAsync(e => e.Id == employeeId);
             if (employee is not null)
