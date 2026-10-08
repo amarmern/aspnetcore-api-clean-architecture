@@ -1,4 +1,5 @@
 using MyApp.Api;
+using MyApp.Core.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +9,9 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//builder.Services.Configure<ConnectionStringOptions>(builder.Configuration.GetSection(ConnectionStringOptions.SectionName));
 
-builder.Services.AddAppDI(); // Register application services
+builder.Services.AddAppDI(builder.Configuration); // Register application services
 
 var app = builder.Build();
 
