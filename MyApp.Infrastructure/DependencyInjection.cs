@@ -5,6 +5,7 @@ using MyApp.Core.Interfaces;
 using MyApp.Core.Options;
 using MyApp.Infrastructure.Data;
 using MyApp.Infrastructure.Repositories;
+using MyApp.Infrastructure.Services;
 
 namespace MyApp.Infrastructure
 {
@@ -28,7 +29,12 @@ namespace MyApp.Infrastructure
                 option.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
             });
 
-            services.AddHttpClient<TodosHttpClientService>();
+            services.AddHttpClient<IUserHttpClientService, UsersHttpClientService>(option =>
+            {
+                option.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
+            });
+
+            //services.AddHttpClient<TodosHttpClientService>();
             return services;
         }
     }
