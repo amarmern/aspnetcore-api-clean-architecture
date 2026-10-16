@@ -9,6 +9,7 @@ public class TodosHttpClientService : ITodosHttpClientService
 
     public async Task<IEnumerable<TodoData>> GetTodosAsync()
     {
-        return await _httpClient.GetFromJsonAsync<IEnumerable<TodoData>>("https://jsonplaceholder.typicode.com/todos");
+       //return await _httpClient.GetFromJsonAsync<IEnumerable<TodoData>>("https://jsonplaceholder.typicode.com/todos");
+        return await _httpClient.GetFromJsonAsync<IEnumerable<TodoData>>("todos");
     }
 }

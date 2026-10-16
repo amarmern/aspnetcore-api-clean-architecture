@@ -10,8 +10,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // Register Todos HTTP client service used by ExternaVendorRepository
-builder.Services.AddHttpClient<ITodosHttpClientService, TodosHttpClientService>();
-//builder.Services.Configure<ConnectionStringOptions>(builder.Configuration.GetSection(ConnectionStringOptions.SectionName));
 
 builder.Services.AddAppDI(builder.Configuration); // Register application services
 

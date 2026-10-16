@@ -23,6 +23,11 @@ namespace MyApp.Infrastructure
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IExternaVendorRepository, ExternalVendorRepository>();
 
+            services.AddHttpClient<ITodosHttpClientService, TodosHttpClientService>(option =>
+            {
+                option.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
+            });
+
             services.AddHttpClient<TodosHttpClientService>();
             return services;
         }
