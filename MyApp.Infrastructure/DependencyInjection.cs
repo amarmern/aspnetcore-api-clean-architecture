@@ -1,14 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using MyApp.Core.Interfaces;
 using MyApp.Core.Options;
 using MyApp.Infrastructure.Data;
 using MyApp.Infrastructure.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MyApp.Infrastructure
 {
@@ -25,6 +21,9 @@ namespace MyApp.Infrastructure
             });
             //Add dependency injection for the EmployeeRepository from the Core layer to the Infrastructure layer
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IExternaVendorRepository, ExternalVendorRepository>();
+
+            services.AddHttpClient<TodosHttpClientService>();
             return services;
         }
     }
